@@ -1,6 +1,6 @@
 const express = require("express")
 
-const elecData=require("./electronics.json")
+const data=require("./db.json")
 const groceryData=require("./grocery.json")
 const fashionData=require("./fashion.json")
 const cors=require("cors")
@@ -15,13 +15,13 @@ app.use(express.json())
 
 
 app.get("/electronics", (req, res) => {
-    res.send(elecData.electronics)
+    res.send(data.electronics)
 })
 app.get("/fashion", (req, res) => {
-    res.send(fashionData.fashion)
+    res.send(data.fashion)
 })
 app.get("/grocery", (req, res) => {
-    res.send(groceryData.grocery)
+    res.send(data.grocery)
 })
 
 app.listen(port, async () => {
